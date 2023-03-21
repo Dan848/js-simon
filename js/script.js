@@ -49,6 +49,7 @@ function play () {
     printNumbers.innerHTML = `${guessNumbers[0]} - ${guessNumbers[1]} - ${guessNumbers[2]} - ${guessNumbers[3]} - ${guessNumbers[4]}`;
 
     for(let i = 0; i < inputBoxes.length; i++) {
+        inputBoxes[i].value = "";
         inputBoxes[i].disabled = true;
     }
 
@@ -76,6 +77,7 @@ function play () {
             checkedNumbers.push(parseInt(inputBoxes[i].value));
             }
         }
+
         if (score > 0) {
         printResult.append(createChild("h5", ["bg-warning", "rounded-2", "text-black", "py-2"], `Numeri Ricordati: ${score} - Quali Numeri: ${checkedNumbers}`))
         }
