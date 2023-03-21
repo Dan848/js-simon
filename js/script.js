@@ -35,31 +35,45 @@ function createNumber () {
     return fiveRandomNumbers;
 }
 
+//Funzione per iniziare a giocare
 function play () {
-    const check = document.getElementById("check");
-    const printResult = document.getElementById("result");
-    printResult.innerHTML = "";
+    //Prendo gli elementi del DOM
+    const inputBoxes = Array.from(document.querySelectorAll("input")); //Input Boxes
+    const check = document.getElementById("check"); //Button Check
+    const printResult = document.getElementById("result"); //Div per stampare il risultato...
+    printResult.innerHTML = ""; //...lo azzero
+    //Rimuovo il click 
     start.removeEventListener("click", play);
-
     const guessNumbers = createNumber();
     const printNumbers = document.getElementById("numbers");
     printNumbers.innerHTML = `${guessNumbers[0]} - ${guessNumbers[1]} - ${guessNumbers[2]} - ${guessNumbers[3]} - ${guessNumbers[4]}`;
 
+    for(let i = 0; i < inputBoxes.length; i++) {
+        inputBoxes[i].disabled = true;
+    }
+
     setTimeout(() => {
+    for(let i = 0; i < inputBoxes.length; i++) {
+        inputBoxes[i].disabled = false;
+    }
     printNumbers.innerHTML = "";
     start.addEventListener("click", play);
     check.addEventListener("click", result);
     }, 3000);
 
+
+
+
+
     function result () {
         let score = 0;
-        const inputBox = Array.from(document.querySelectorAll("input"));
+
         const checkedNumbers = []
 
         for (let i = 0; i < guessNumbers.length; i++) {
-            if (guessNumbers.includes(parseInt(inputBox[i].value)) && !checkedNumbers.includes(parseInt(inputBox[i].value))){
+            if (guessNumbers.includes(parseInt(inputBoxes[i].value)) && !checkedNumbers.includes(parseInt(inputBoxes[i].value))){
             score++;
-            checkedNumbers.push(parseInt(inputBox[i].value));
+            checkedNumbers.push(parseInt(inputBoxes[i].value));
             }
         }
         if (score > 0) {
