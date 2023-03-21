@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-dark text-white"> 
+    <div class="container text-center mt-5">
+        <!-- TITLE -->
+        <h2 class="mb-4">Hai 30 secondi per memorizzare questi numeri</h2>
+        <!-- RANDOM NUMBERS -->
+        <h4 class="mb-3" id="numbers"></h4>
+        <div class="row">
+            <div class="col">
+                <div class="card bg-success">
+                    <div class="card-title h5 py-2">Scrivili qui, non per forza in ordine</div>
+                    <div class="card-body row">
+                        <!-- INPUT 1 -->
+                        <div class="col-md-4 col-12 mb-3">
+                            <label for="box1">1.</label>
+                            <input class="rounded-1 border-0" id="box1" name="box1" type="number">
+                        </div>
+                        <!-- INPUT 2 -->
+                        <div class="col-md-4 col-12 mb-3">
+                            <label for="box2">2.</label>
+                            <input class="rounded-1 border-0" id="box2" name="box2" type="number">
+                        </div>
+                        <!-- INPUT 3 -->
+                        <div class="col-md-4 col-12 mb-3">
+                            <label for="box3">3.</label>
+                            <input class="rounded-1 border-0" id="box3" name="box3" type="number">
+                        </div>
+                        <!-- INPUT 4 -->
+                        <div class="col-md-6 col-12 mb-3">
+                            <label for="box4">4.</label>
+                            <input class="rounded-1 border-0" id="box4" name="box4" type="number">
+                        </div>
+                        <!-- INPUT 5 -->
+                        <div class="col-md-6 col-12 mb-3">
+                            <label for="box5">5.</label>
+                            <input class="rounded-1 border-0" id="box5" name="box5" type="number">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between flex-wrap mt-3">
+                    <div class="col-md-6 col-12 mb-3">
+                        <button id="start" class="btn-success btn">Genera i Numeri</button>
+                    </div>
+                    <div id="check" class="col-md-6 col-12 mb-3">
+                        <button class=" btn-success btn">Quanti ne ho indovinati?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="./js/script.js"></script>
+</body>
+</html>
